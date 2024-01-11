@@ -79,7 +79,7 @@
         // <List to Array>
         // - list.ToArray() 를 통해 배열 반환
         // - list.ConvertAll(식) 을 통해 데이터들을 모두 변환 하면서 배열 반환
-        static void Main(string[] args)
+        static void Main1(string[] args)
         {
             List<string>  list = new List<string>();
             int cnt = list.Count; // <- 리스트는 array.Length와 다르게 길이 대신 갯수를 관리 // Capacity(할당된 메모리의 크기)와 Count(실제 있는 요소의 갯수)는 서로 다름

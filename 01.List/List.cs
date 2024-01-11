@@ -142,7 +142,7 @@ namespace Datastructure
             {
                 if (match(items[i]))
                 {
-                    return [i];
+                    return i;
                 }
             }
 
