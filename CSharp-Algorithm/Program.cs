@@ -51,6 +51,48 @@
         // 데이터 증가량에 따른 시간 증가량을 계산
         // 가장 높은 차수의 계수와 나머지 모든 항을 제거하고 표기
         // 알고리즘의 대략적인 효율을 파악할 수 있는 수단
+
+
+        // 예시
+        // n 을 입력받아 n^2 를 반환하는 함수
+        int Case1(int n)
+        {
+            int sum = 0;
+            sum = n * n;
+            return sum;
+        }
+
+        int Case2(int n)
+        {
+            int sum = 0;
+            for(int i=0; i<n; i++)
+            {
+                sum += n;
+            }
+            return sum;
+        }
+        int Case3(int n)
+        {
+            int sum = 0;
+            for(int i=0; i < n; i++)
+            {
+                for(int j=0; j<n; j++)
+                { sum++; }
+            }
+            return sum;
+        }
+        // 입력값       Case1	    Case2   	   Case3
+        // n = 1            1           1              1
+        // n = 10           1          10            100
+        // n = 100          1         100         10,000
+        // n = 1000         1        1000      1,000,000
+        // Big-O		 O(1)	     O(n)   	   O(n²)
+        //               최선                       최악
+
+        // <수행 시간 분석>
+        // 알고리즘의 성능은 상황에 따라 수행 시간이 달라짐
+        // 수행 시간을 분석하는 경우 평균의 상황과 최악의 상황을 기준으로 평가함
+        // 최선의 상황의 경우 알고리즘의 성능을 분석하는 수단으로 적합하지 않음
         static void Main(string[] args)
         {
             Console.WriteLine("Hello, World!");
