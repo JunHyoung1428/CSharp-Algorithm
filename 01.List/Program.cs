@@ -86,10 +86,15 @@
             list.Add("2 data");
             list.Add("3 data");
 
-            list.Insert(2, "Insert Data in index 2"); // 삽입
+            list.Insert(2, "2 Insert Data"); // 해당 인덱스에 삽입
 
             list.Remove("2 data"); //삭제
-            list.RemoveAt(2);
+            bool isRemove = list.Remove("0 data"); // 삭제 수행 여부에 따라 bool 형식 반환
+
+            list.RemoveAt(2); // 해당 인덱스의 자료 삭제
+
+
+            list[0] = "0 Fixed data"; //배열과 같은 형식으로 접근
 
             foreach (var item in list)
             {
