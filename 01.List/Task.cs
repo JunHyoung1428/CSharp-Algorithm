@@ -21,7 +21,7 @@ namespace _01.List
 {
     internal class Task
     {
-        static void Main()
+        static void Main2()
         {
             MyList myList = new MyList();
 
