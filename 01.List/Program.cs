@@ -5,11 +5,13 @@
         /*******************************************************
          * 리스트 (List)
          * 
-         * 런타임 중 크기를 확장할 수 있는 배열기반의 자료구조
+         * 런타임 중 크기를 "확장할 수 있는" 배열기반의 자료구조
          * 배열요소의 갯수를 특정할 수 없는 경우 사용이 용이
+         * 
+         * 반대로 크기를 확정 할 수 있는 경우는 배열을 사용하는 편이 좋음
          *******************************************************/
 
-        // <리스트 구현>  -> List<Type> name = new List<Type>();
+        // <리스트 구현>  -> List<Type> name = new List<Type>(); , Capacity : 크기 선언 또한 가능, 생성자에 매개변수로 넣어서도 사용가능
         // 리스트는 배열기반의 자료구조이며, 배열은 크기를 변경할 수 없는 자료구조
         // 리스트는 동작 중 크기를 확장하기 위해 포함한 데이터보다 더욱 큰 배열을 사용
         //
@@ -80,26 +82,34 @@
         static void Main(string[] args)
         {
             List<string>  list = new List<string>();
+            // int cnt = list.Count; // <- 리스트는 array.Length와 다르게 길이 대신 갯수를 관리
 
-            list.Add("0 data"); // 추가
+            //데이터 추가
+            list.Add("0 data"); 
             list.Add("1 data");
             list.Add("2 data");
-            list.Add("3 data");
+            list.Add("3 data");                                     // O(1)
+            list.Insert(2, "2 Insert Data"); // 해당 인덱스에 삽입  // O(n)
 
-            list.Insert(2, "2 Insert Data"); // 해당 인덱스에 삽입
 
-            list.Remove("2 data"); //삭제
+            //삭제
+            list.Remove("2 data"); 
             bool isRemove = list.Remove("0 data"); // 삭제 수행 여부에 따라 bool 형식 반환
 
             list.RemoveAt(2); // 해당 인덱스의 자료 삭제
 
+            //접근
+            list[0] = "0 Fixed data"; //배열과 같은 형식으로
 
-            list[0] = "0 Fixed data"; //배열과 같은 형식으로 접근
 
-            foreach (var item in list)
-            {
-                Console.WriteLine(item);
-            }
+            //탐색
+            list.IndexOf("4번째 데이터"); //탐색하고 없으면 -1 반환, 있으면 해당 인덱스 반환
+            //list.Contains("0번째 데이터"); //탐색하고 있는지, 없는지만 bool 반환
+
+            
+            
         }
+
+
     }
 }

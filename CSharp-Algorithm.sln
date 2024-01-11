@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00.Algorithm", "CSharp-Algo
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.List", "01.List\01.List.csproj", "{662DFB44-BF52-4C48-B4CD-36B6A853FFCF}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.LinkedList", "02.LinkedList\02.LinkedList.csproj", "{BBD180BC-79C6-4A55-9A1B-F1AC07978A8C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{662DFB44-BF52-4C48-B4CD-36B6A853FFCF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{662DFB44-BF52-4C48-B4CD-36B6A853FFCF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{662DFB44-BF52-4C48-B4CD-36B6A853FFCF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BBD180BC-79C6-4A55-9A1B-F1AC07978A8C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BBD180BC-79C6-4A55-9A1B-F1AC07978A8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BBD180BC-79C6-4A55-9A1B-F1AC07978A8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BBD180BC-79C6-4A55-9A1B-F1AC07978A8C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
