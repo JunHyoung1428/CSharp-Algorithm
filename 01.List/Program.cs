@@ -82,7 +82,7 @@
         static void Main(string[] args)
         {
             List<string>  list = new List<string>();
-            // int cnt = list.Count; // <- 리스트는 array.Length와 다르게 길이 대신 갯수를 관리
+            int cnt = list.Count; // <- 리스트는 array.Length와 다르게 길이 대신 갯수를 관리 // Capacity(할당된 메모리의 크기)와 Count(실제 있는 요소의 갯수)는 서로 다름
 
             //데이터 추가
             list.Add("0 data"); 
@@ -90,7 +90,7 @@
             list.Add("2 data");
             list.Add("3 data");                                     // O(1)
             list.Insert(2, "2 Insert Data"); // 해당 인덱스에 삽입  // O(n)
-
+            
 
             //삭제
             list.Remove("2 data"); 
@@ -104,7 +104,7 @@
 
             //탐색
             list.IndexOf("4번째 데이터"); //탐색하고 없으면 -1 반환, 있으면 해당 인덱스 반환
-            //list.Contains("0번째 데이터"); //탐색하고 있는지, 없는지만 bool 반환
+            list.Contains("0번째 데이터"); //탐색하고 있는지, 없는지만 bool 반환
 
             
             
