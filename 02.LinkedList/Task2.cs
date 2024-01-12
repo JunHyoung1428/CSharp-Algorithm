@@ -14,7 +14,7 @@ namespace _02.LinkedList
 {
     internal class Task2
     {
-        static void Main()
+        static void Main2()
         {
             Josephus josephus = new Josephus(7, 3);
         }

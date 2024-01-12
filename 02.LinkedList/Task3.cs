@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 /*  <풍선 터트리기 문제>
@@ -19,11 +20,56 @@ namespace _02.LinkedList
 {
     internal class Task3
     {
-
+        static void Main()
+        {
+            BallonList ballon = new BallonList();
+        }
     }
 
     class BallonList
     {
         LinkedList<int> list;
+
+
+        public BallonList()
+        {
+            list = new LinkedList<int>();
+            list.AddLast(3);
+            list.AddLast(2);
+            list.AddLast(1);
+            list.AddLast(-3);
+            list.AddLast(-1);
+
+            PoP(1);
+        }
+
+
+        public void PoP(int n)
+        {
+            LinkedListNode<int> current = list.First;
+            while (list != null)
+            {
+                if (n > 0)
+                {
+                    for(int i=1; i < n; i++)
+                    {
+                        current = current.Next ?? list.First;
+                    }   
+                }
+                else
+                {
+                    for(int i=1; i < Math.Abs(n); i++)
+                    {
+                        current = current.Previous ?? list.Last;
+                    }
+                }
+                LinkedListNode<int> next = current.Next ?? list.First;//current Null 에러 발생
+                Console.Write($"{list} ");
+                int value = current.Value;
+                list.Remove(current);
+                current = next;
+                PoP(value);
+            }
+        }
     }
 }
