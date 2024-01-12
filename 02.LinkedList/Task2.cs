@@ -52,7 +52,7 @@ namespace _02.LinkedList
                 {
                     for(int i=1; i<k; i++)
                     {
-                        current = current.Next ?? list.First;
+                        current = current.Next ?? list.First; // ??은 Null 병합 연산자로, 왼쪽 값이 Null이면 오른쪽 값을 반환함
                     }
 
                     LinkedListNode<int> next = current.Next ?? list.First;
