@@ -35,40 +35,31 @@ namespace _02.LinkedList
                 {
                     list.AddLast(i);
                 }
-                while (deadList.Count != n)
-                {
-                    Kill(k);
-                }
+                Kill(k);
                 Print();
             }
 
             private void Kill(int k)
             {
-                
-                if (list != null)
+                /*
+                LinkedListNode<int> temp;
+                temp = list.First;
+                list.First = list.Last;
+                list.Last = temp;*/
+
+                LinkedListNode<int> current = list.First;
+                while(list.Count > 0)
                 {
-                    foreach(int i in list) 
+                    for(int i=1; i<k; i++)
                     {
-                        if (cnt == k)
-                        {
-                            deadList.Add(i);
-                            cnt = 0;
-                        }
-                        cnt++;
-                        
+                        current = current.Next ?? list.First;
                     }
-                    if (list.Count != 0)
-                    {
-                        foreach (int i in deadList)
-                        {
-                            list.Remove(i);
-                        }
-                    }
-                    else
-                    {
-                        return;
-                    }
-                }
+
+                    LinkedListNode<int> next = current.Next ?? list.First;
+                    deadList.Add(current.Value);
+                    list.Remove(current);
+                    current = next;
+                }     
             }
 
             private void Print()

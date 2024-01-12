@@ -19,5 +19,11 @@ namespace _02.LinkedList
 {
     internal class Task3
     {
+
+    }
+
+    class BallonList
+    {
+        LinkedList<int> list;
     }
 }
