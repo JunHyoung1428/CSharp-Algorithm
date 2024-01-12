@@ -16,13 +16,70 @@ namespace _02.LinkedList
     {
         static void Main()
         {
-
+            Josephus josephus = new Josephus(7, 3);
         }
 
 
         class Josephus
         {
             LinkedList<int> list;
+            List<int> deadList;
+            int cnt;
+
+            public Josephus(int n, int k)
+            {
+                list = new LinkedList<int>();
+                deadList = new List<int>();
+                cnt = 1;
+                for(int i=1; i<=n; i++)
+                {
+                    list.AddLast(i);
+                }
+                while (deadList.Count != n)
+                {
+                    Kill(k);
+                }
+                Print();
+            }
+
+            private void Kill(int k)
+            {
+                
+                if (list != null)
+                {
+                    foreach(int i in list) 
+                    {
+                        if (cnt == k)
+                        {
+                            deadList.Add(i);
+                            cnt = 0;
+                        }
+                        cnt++;
+                        
+                    }
+                    if (list.Count != 0)
+                    {
+                        foreach (int i in deadList)
+                        {
+                            list.Remove(i);
+                        }
+                    }
+                    else
+                    {
+                        return;
+                    }
+                }
+            }
+
+            private void Print()
+            {
+                Console.Write("<");
+                foreach(int i in deadList)
+                {
+                    Console.Write($"{i} ");
+                }
+                Console.Write(">");
+            }
         }
 
     }
