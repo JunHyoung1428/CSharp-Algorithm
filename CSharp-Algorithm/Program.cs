@@ -88,6 +88,7 @@
         // n = 1000         1        1000      1,000,000
         // Big-O		 O(1)	     O(n)   	   O(n²)
         //               최선                       최악
+        // O(1) -> O(logN) -> O(N) -> O(NlogN) -> O(N^2) -> O(2^N)
 
         // <수행 시간 분석>
         // 알고리즘의 성능은 상황에 따라 수행 시간이 달라짐
@@ -95,7 +96,7 @@
         // 최선의 상황의 경우 알고리즘의 성능을 분석하는 수단으로 적합하지 않음
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Console.WriteLine("Hello, Algorithm!");
         }
     }
 }
