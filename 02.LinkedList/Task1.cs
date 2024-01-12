@@ -16,7 +16,7 @@ namespace _02.LinkedList
 {
     internal class Task1
     {
-        public static void Main()
+        public static void Main2()
         {
             MyList myList = new MyList();
             while(true)
@@ -45,12 +45,18 @@ namespace _02.LinkedList
                     GetInput();
                     return;
                 }
+                if(input==0)
+                {
+                    Console.WriteLine("0은 받지 않습니다.");
+                    GetInput();
+                    return;
+                }
                 
                 if (input > 0)//양수면 뒤에다 추가
                 {
                     mylist.AddLast(input);
                 }
-                else //음수면 앞에다 추가
+                else if(input <0)//음수면 앞에다 추가
                 {
                     mylist.AddFirst(input);
                 }
