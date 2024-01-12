@@ -21,7 +21,7 @@ namespace _02.LinkedList
     // IEnumerator : 자료구조의 반복기 객체 인터페이스
     internal class Iterator
     {
-        static void Main()
+        static void Main1()
         {
             List<int> list = new List<int>();
             LinkedList<int> linkedList = new LinkedList<int>();
