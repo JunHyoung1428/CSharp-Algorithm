@@ -46,8 +46,9 @@ namespace _02.LinkedList
 
         public void PoP(int n)
         {
+
             LinkedListNode<int> current = list.First;
-            while (list != null)
+            while (list.Count != 0 && current != null)
             {
                 if (n > 0)
                 {
@@ -63,8 +64,8 @@ namespace _02.LinkedList
                         current = current.Previous ?? list.Last;
                     }
                 }
-                LinkedListNode<int> next = current.Next ?? list.First;//current Null 에러 발생
-                Console.Write($"{list} ");
+                LinkedListNode<int> next = current.Next ?? list.First;
+                Console.Write($"{current.Value} ");
                 int value = current.Value;
                 list.Remove(current);
                 current = next;
