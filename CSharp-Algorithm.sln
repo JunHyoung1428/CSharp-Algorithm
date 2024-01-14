@@ -3,11 +3,13 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.8.34330.188
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "00.Algorithm", "CSharp-Algorithm\00.Algorithm.csproj", "{6E022749-3B7B-4B11-A9C5-5E3DC0090A85}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "00.Algorithm", "CSharp-Algorithm\00.Algorithm.csproj", "{6E022749-3B7B-4B11-A9C5-5E3DC0090A85}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "01.List", "01.List\01.List.csproj", "{662DFB44-BF52-4C48-B4CD-36B6A853FFCF}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "01.List", "01.List\01.List.csproj", "{662DFB44-BF52-4C48-B4CD-36B6A853FFCF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "02.LinkedList", "02.LinkedList\02.LinkedList.csproj", "{BBD180BC-79C6-4A55-9A1B-F1AC07978A8C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "02.LinkedList", "02.LinkedList\02.LinkedList.csproj", "{BBD180BC-79C6-4A55-9A1B-F1AC07978A8C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "03.Stack", "03.Stack\03.Stack.csproj", "{307F58D5-A799-4246-BA91-62634DADFB2C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -27,6 +29,10 @@ Global
 		{BBD180BC-79C6-4A55-9A1B-F1AC07978A8C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BBD180BC-79C6-4A55-9A1B-F1AC07978A8C}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BBD180BC-79C6-4A55-9A1B-F1AC07978A8C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{307F58D5-A799-4246-BA91-62634DADFB2C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{307F58D5-A799-4246-BA91-62634DADFB2C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{307F58D5-A799-4246-BA91-62634DADFB2C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{307F58D5-A799-4246-BA91-62634DADFB2C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
