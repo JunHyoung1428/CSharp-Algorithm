@@ -59,7 +59,7 @@ namespace _02.LinkedList
                 }
                 else
                 {
-                    for(int i=1; i < Math.Abs(n); i++)
+                    for(int i=-1; i < n; i--)
                     {
                         current = current.Previous ?? list.Last;
                     }
