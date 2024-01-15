@@ -29,15 +29,10 @@ namespace Task_Stack_Queue
 
         static int[] ProcessJob(int[] jobList)
         {
-            Queue<int> queue = new Queue<int>();
+            Queue<int> queue = new Queue<int>(jobList); //생성자에 배열 넣으면 알아서 각각 요소로 스택/큐 만들어줌
             List<int> result = new List<int>();
             int dayProcess = 8;
             int dayCount = 1;
-
-            foreach (var i in jobList)
-            {
-                queue.Enqueue(i);
-            }
 
             while (queue.Count > 0)
             {
