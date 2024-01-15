@@ -29,7 +29,23 @@
 
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello, World!");
+            Stack<int> stack = new Stack<int>();
+            for(int i = 1; i <= 5; i++)
+            {
+                stack.Push(i);  // 입력순 : 1, 2, 3, 4, 5  //O(1) 꽉차면 O(n)
+            }
+            
+            Console.WriteLine($"stack.Peek() : { stack.Peek()}"); 
+
+            for(int i = 0;i < 5; i++)
+            {
+                int val =  stack.Pop(); //출력순서 5, 4, 3, 2, 1 // O(1)
+                Console.WriteLine(val) ;
+            }
+          
+
+            //사용 예)) 게임 UI - 최신 입력을 순서대로 처리 
+           
         }
     }
 }
