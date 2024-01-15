@@ -53,6 +53,7 @@ namespace Task_Stack_Queue
                 else
                     stack.Push(c);
             }
+
             if (stack.Count == 0)
             {
                 Console.WriteLine(true);
