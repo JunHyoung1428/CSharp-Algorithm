@@ -117,7 +117,7 @@
         // O(n)       O(n)       O(n)       O(n)
 
 
-        static void Main(string[] args)
+        static void Main1(string[] args)
         {
             //SortedSet 자료구조
             //중복이 없고 정렬됨을 보장함  
