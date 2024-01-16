@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection.Metadata;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
@@ -68,10 +69,88 @@ namespace _DataStructure
             return true;
         }
 
+
         public bool Remove(T item) 
         {
 
-            return false; 
+            if(FindNode(item) == null)
+            {
+                return false;
+            }
+            else
+            {
+                EraseNode(FindNode(item));
+                return true;
+            }
+        }
+
+        // 노드 삭제 연산 수행
+        // 3가지 상황 모두 상정해야함
+        private void EraseNode(Node node)
+        {
+            if(node.HasNoChild)     //자식이 0개인 경우
+            {
+                if (node.IsLeftChild)
+                {
+                    node.parent.left = null;
+                }else if (node.IsRightChild)
+                {
+                    node.parent.right = null;
+                }
+                else // root노드인 경우
+                {
+                    root = null;
+                }
+            }else if( node.HasLeftChild ||
+                node.HasRightChild) //자식이 1개인 경우
+            {
+                Node parent = node.parent;
+                Node child = node.HasLeftChild ? parent.left : parent.right;
+                //이후 부모에 자식을 연결하고 자기 자신은 사라지면 됨
+                if (node.IsLeftChild)
+                {
+                    parent.left = child;
+                    child.parent = parent;
+                }
+                else if (node.IsRightChild)
+                {
+                    parent.right = child;
+                    child.parent = parent;
+                }
+                else // root노드인 경우
+                {
+                    root = child;
+                    child.parent = null;
+                }
+            }
+            else                    //자식이 2개인 경우
+            {
+                Node nextNode = node.right; //오른쪽 자식 노드중 가장 작은 노드를 찾는 방식
+                while(nextNode.left != null)
+                {
+                    nextNode = nextNode.left;
+                }
+                /*                          //왼쪽 자식 노드 중 가장 큰 노드를 찾는 방식
+                Node netNode = node.left;
+                while(nextNode.right != null)
+                {
+                    nextNode = nextNode.right;
+                }
+                */
+                node.item = nextNode.item;
+                EraseNode(nextNode);
+            }
+        }
+        public bool Contains(T item) 
+        {
+            if(FindNode(item) == null)
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
         }
 
         private Node FindNode(T item)
