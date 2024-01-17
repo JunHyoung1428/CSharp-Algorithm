@@ -34,7 +34,7 @@ namespace _06.Heap
 {
     internal class Task1
     {
-        static void Main()
+        static void Main1()
         {
             PriorityQueue<int,int> priorityQueue = new PriorityQueue<int,int>();
             
