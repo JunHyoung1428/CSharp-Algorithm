@@ -106,7 +106,7 @@ namespace _06.Heap
         // ┌┴┐ ┌┘
         // 7 8 9
 
-        static void Main(string[] args)
+        static void Main1(string[] args)
         {
             //priority 우선순위 큐, 기본적으로 최소힙으로 구현됨
             PriorityQueue<string,int> priorityQueue = new PriorityQueue<string,int>();
