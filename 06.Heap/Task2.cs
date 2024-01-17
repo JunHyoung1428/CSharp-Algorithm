@@ -20,6 +20,13 @@ using System.Threading.Tasks;
  */
 
 
+/*Task3
+ * 중앙값 idea
+ * 자료 n개 - 중앙값 - 자료 n개 형태
+ * 양쪽 자료를 우선순위큐로 최대/최소 힙 형태로 관리하면 중앙값을 쉽게 뽑아낼 수 있음
+ * 
+ */
+
 namespace _06.Heap
 {
     internal class Task2
@@ -34,11 +41,7 @@ namespace _06.Heap
                 string[] temp = Console.ReadLine().Split();
                 priorityQueue.Enqueue(int.Parse(temp[1]), int.Parse(temp[0])); // 시작시간을 우선순위로 큐 삽입
             }
-
-
-
             Console.WriteLine(MinimumMeetingRoom(priorityQueue));
-
         }
 
         static int MinimumMeetingRoom(PriorityQueue<int, int> priorityQueue)
@@ -47,7 +50,14 @@ namespace _06.Heap
 
             int meetingRoom = 0;
            
+           while(priorityQueue.Count > 0)
+            {
+                if(newQueue.Count==0)
+                {
+                    meetingRoom++;
+                }
 
+            }
 
 
             return -1;
