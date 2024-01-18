@@ -115,7 +115,7 @@
         //생성할 때 데이터보다 큰 공간을 할당하기 때문에 모든 영역을 순차적으로 접근 할 수는 없음
         //공간복잡도를 희생하고 시간복잡도를 살리는 방법
  
-        static void Main(string[] args)
+        static void Main1(string[] args)
         {
             //해시테이블 기반의 Hashset 자료구조
             //중복을 허용하지 않는 저장소
@@ -159,6 +159,7 @@
             // 탐색
             dictionary.ContainsKey(3);                        // 포함 확인
             dictionary.TryGetValue(3, out string dicValue);   // 탐색 시도
+            string str = dictionary[5];
 
             // 순서대로 출력시 정렬된 결과 확인
             foreach (string value in dictionary.Values)
