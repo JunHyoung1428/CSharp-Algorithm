@@ -109,6 +109,7 @@
         // <해시테이블의 시간복잡도> (최선의 경우)
         // 접근       탐색       삽입       삭제
         //  X         O(1)       O(1)       O(1)
+                               // 충돌 문제 때문에 실제로는 삽입 삭제연산을 자주 사용하는것을 비권장함
         
         
         //생성할 때 데이터보다 큰 공간을 할당하기 때문에 모든 영역을 순차적으로 접근 할 수는 없음
@@ -139,9 +140,34 @@
             {
                 Console.Write($"{s} ");
             }
-            
 
-           
+            // 해시테이블 기반의 Dictionary 자료구조
+            // 중복을 허용하지 않는 key를 기준으로 해시기반의 value 저장소
+            Dictionary<int, string> dictionary = new Dictionary<int, string>();
+
+            // 삽입
+            dictionary.Add(2, "A");
+            dictionary.Add(1, "B");
+            dictionary.Add(4, "C");
+            dictionary.Add(3, "D");
+            dictionary.Add(5, "E");
+            // dictionary.Add(4, "F");    // error : Dictionary는 중복을 허용하지 않음
+
+            // 삭제
+            dictionary.Remove(5);
+
+            // 탐색
+            dictionary.ContainsKey(3);                        // 포함 확인
+            dictionary.TryGetValue(3, out string dicValue);   // 탐색 시도
+
+            // 순서대로 출력시 정렬된 결과 확인
+            foreach (string value in dictionary.Values)
+            {
+                Console.Write(value);     // output : ABCD
+            }
+            Console.WriteLine();
+
+
         }
     }
 }
