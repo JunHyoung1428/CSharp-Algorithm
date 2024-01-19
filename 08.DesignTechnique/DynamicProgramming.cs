@@ -42,7 +42,7 @@ namespace _08.DesignTechnique
 		 *예를 들어서 10, -4, 3, 1, 5, 6, -35, 12, 21, -1 이라는 수열이 주어졌다고 하자.
 		 *여기서 정답은 12+21인 33이 정답이 된다.
 		 */
-		static void Main()
+		static void Main1()
 		{
 			//int[] values = { 10, -4, -3, 1, 5, 6, -35, 12, 21, -1 };
 			int count = int.Parse(Console.ReadLine());
