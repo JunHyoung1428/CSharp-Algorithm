@@ -29,9 +29,35 @@ i번 사람이 돈을 인출하는데 걸리는 시간은 Pi분이다.
 첫째 줄에 각 사람이 돈을 인출하는데 필요한 시간의 합의 최솟값을 출력한다.
  */
 
-namespace _08.DesignTechnique
+namespace ATM
 {
     internal class Task2
     {
+        static void Main()
+        {
+            int n = int.Parse(Console.ReadLine());
+            int[] array = new int[n];
+            string[] texts = Console.ReadLine().Split();
+            long total = 0 ;
+
+            for(int i = 0; i < n; i++)
+            {
+                array[i] = int.Parse(texts[i]);
+            }
+
+            // 배열 정렬하기
+            Array.Sort(array);
+
+            // 정렬된 배열에서 꺼내서 합 구하기
+            for (int i = 0; i < array.Length; i++)
+            {
+                for (int j = i; j < array.Length; j++)
+                {
+                    total += array[i];
+
+                }
+            }
+            Console.WriteLine(total);
+        }
     }
 }
