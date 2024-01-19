@@ -13,10 +13,60 @@ using System.Threading.Tasks;
 출력
 첫째 줄에는 잘라진 햐얀색 색종이의 개수를 출력하고, 둘째 줄에는 파란색 색종이의 개수를 출력한다.
 
+분할 정복 문제
  */
 namespace _08.DesignTechnique
 {
     internal class Task3
     {
+        static int white = 0, blue = 0;
+        static int[,] paper;
+        static void Main()
+        {
+            int size = int.Parse(Console.ReadLine());
+
+            paper = new int[size,size];
+            for (int i = 0; i < size; i++)
+            {
+                string[] input = Console.ReadLine().Split();
+                for(int j = 0; j < size; j++)
+                {
+                    paper[i,j] = int.Parse(input[j]);
+                }
+            }
+
+            Devide(0, 0, size, size);
+
+            Console.WriteLine(white);
+            Console.WriteLine(blue);
+        }
+        public static void Devide(int startX, int startY, int sizeX,int sizeY)
+        {
+            if (IsAllColorMatched(startX, startY, sizeX, sizeY))
+            {
+                int check = paper[startX, startY];
+                if(check == 1)
+                {
+                    white++;
+                }
+                else
+                {
+                    blue++;
+                }
+                return;
+            }
+
+            Devide(startX               , startY            , sizeX/2   ,sizeY/2);
+            Devide(startX               , startY+sizeY/2    , sizeX/2   ,sizeY/2);
+            Devide(startX + startX / 2  , startY            , sizeX / 2 ,sizeY / 2);
+            Devide(startX + startX / 2  , startY+sizeY/2    , sizeX / 2 ,sizeY / 2);
+        }
+
+        public static bool IsAllColorMatched(int startX, int startY, int sizeX, int sizeY)
+        {
+            //모두 돌아서 색이 같은지 아닌지만 확인
+
+            return false;
+        }
     }
 }

@@ -21,11 +21,15 @@ using System.Threading.Tasks;
 첫째 줄에 삼각형의 크기 n(1 ≤ n ≤ 500)이 주어지고, 둘째 줄부터 n+1번째 줄까지 정수 삼각형이 주어진다.
 
 출력
-첫째 줄에 합이 최대가 되는 경로에 있는 수의 합을 출력한다.
+첫째 줄에 합이 최대가 되는 경로에 있는 수의 합을 출력한다. 
  */
 namespace _08.DesignTechnique
 {
     internal class Task4
     {
+        static void Main()
+        {
+            //최대 경로만 저장해서 다음 삼각형으로 
+        }
     }
 }

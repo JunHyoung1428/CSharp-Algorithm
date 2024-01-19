@@ -33,7 +33,7 @@ namespace ATM
 {
     internal class Task2
     {
-        static void Main()
+        static void Main2()
         {
             int n = int.Parse(Console.ReadLine());
             int[] array = new int[n];
@@ -54,7 +54,6 @@ namespace ATM
                 for (int j = i; j < array.Length; j++)
                 {
                     total += array[i];
-
                 }
             }
             Console.WriteLine(total);
