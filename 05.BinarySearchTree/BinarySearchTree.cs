@@ -138,7 +138,7 @@ namespace _DataStructure
                 }
                 */
                 node.item = nextNode.item;
-                EraseNode(nextNode);
+                EraseNode(nextNode); //재귀호출
             }
         }
         public bool Contains(T item) 
