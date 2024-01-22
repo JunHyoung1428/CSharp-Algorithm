@@ -55,6 +55,44 @@
             }
             Console.WriteLine();
 
+            Console.WriteLine("합병 정렬 결과 : ");
+            Sorting.MergeSort(mergeList, 0, mergeList.Count - 1);
+            foreach (int i in mergeList)
+            {
+                Console.Write($"{i,3}");
+            }
+            Console.WriteLine();
+
+
+            Console.WriteLine("퀵 정렬 결과 : ");
+            Sorting.QuickSort(quickList, 0, quickList.Count - 1);
+            foreach (int i in quickList)
+            {
+                Console.Write($"{i,3}");
+            }
+            Console.WriteLine();
+
+
+            Console.WriteLine("힙 정렬 결과 : ");
+            Sorting.HeapSort(heapList);
+            foreach (int i in heapList)
+            {
+                Console.Write($"{i,3}");
+            }
+            Console.WriteLine();
+
+            //인트로 정렬
+            //상황에 따라 더 좋은 정렬 알고리즘을 선택해서 사용함
+            //퀵정렬로 시작한 다음 최악의 상황(O(n^2))에 근접한다면
+            //힙정렬로 전환
+            //데이터가 일정 수(16) 이하이면 삽입정렬 사용. <- 퀵정렬과 힙정렬은 재귀알고리즘이라, 임계치 이하에서는 연산보다 함수호출이 더 시간을 잡아먹음
+            Console.WriteLine("C# 인트로 정렬 결과 : ");
+            introList.Sort();
+            foreach (int i in introList)
+            {
+                Console.Write($"{i,3}");
+            }
+            Console.WriteLine();
         }
     }
 }
