@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-/* 백준 1932 정수삼각형 https://www.acmicpc.net/problem/1932
+/* 백준 1932 정수삼각형 https://www.acmicpc.net/problem/1932 동적계획법 문제
 
         7
       3   8
@@ -27,9 +27,48 @@ namespace _08.DesignTechnique
 {
     internal class Task4
     {
-        static void Main()
+        static int[,] stage;
+        static int result = 0;
+        static void Main4()
         {
-            //최대 경로만 저장해서 다음 삼각형으로 
+            //최대 경로만 저장해서 다음 삼각형으로
+
+            int count = int.Parse(Console.ReadLine());
+            stage = new int[count,count];
+            for(int i = 0; i < count; i++)
+            {
+                string[] inputs = Console.ReadLine().Split();
+                for(int j = 0; j < count; j++)
+                {
+                    stage[i,j] = int.Parse(inputs[j]);
+                }
+            }
+
+            Solution();
+            for(int x=0; x < count; x++)
+            {
+                result = stage[count - 1, x] > result ? stage[count - 1, x] : result;
+            }
+            Console.WriteLine(result);
+        }
+
+        public static void Solution()
+        {
+            for (int i = 1; i < stage.GetLength(0); i++)
+            {
+                stage[i, 0] += stage[i - 1, 0];
+                for(int j=1; j<stage.GetLength(1); j++)
+                {
+                    if (stage[i - 1, j - 1] > stage[i - 1, j])
+                    {
+                        stage[i, j] += stage[i - 1, j - 1];
+                    }
+                    else
+                    {
+                        stage[i, j] += stage[i - 1, j];
+                    }
+                }
+            }          
         }
     }
 }
