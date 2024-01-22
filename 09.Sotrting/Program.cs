@@ -5,7 +5,7 @@
         static void Main(string[] args)
         {
             Random random = new Random();
-            int count = 10;
+            int count = 8;
 
             List<int> selectionList = new List<int>(count);
             List<int> insertionList = new List<int>(count);
@@ -18,7 +18,7 @@
             Console.WriteLine("랜덤 데이터 : ");
             for (int i = 0; i < count; i++)
             {
-                int rand = random.Next() % 100;
+                 int rand = random.Next() % 100;
                 Console.Write($"{rand,3}");
 
                 selectionList.Add(rand);
@@ -29,9 +29,10 @@
                 quickList.Add(rand);
                 introList.Add(rand);
             }
-
-            Console.WriteLine("\n선택 정렬 결과 : ");
-            Sorting.SelectionSort(selectionList, 0, mergeList.Count - 1);
+            Console.WriteLine();
+            
+            Console.WriteLine("선택 정렬 결과 : ");
+            MySort.SelectSort(selectionList, 0, mergeList.Count - 1);
             foreach (int i in selectionList)
             {
                 Console.Write($"{i,3}");
@@ -40,7 +41,7 @@
 
 
             Console.WriteLine("삽입 정렬 결과 : ");
-            Sorting.InsertionSort(insertionList, 0, mergeList.Count - 1);
+            MySort.InsertSort(insertionList, 0, mergeList.Count - 1);
             foreach (int i in insertionList)
             {
                 Console.Write($"{i,3}");
@@ -48,24 +49,24 @@
             Console.WriteLine();
 
             Console.WriteLine("버블 정렬 결과 : ");
-            Sorting.BubbleSort(bubbleList, 0, bubbleList.Count - 1);
+            MySort.BubbleSort(bubbleList, 0, bubbleList.Count - 1);
             foreach (int i in bubbleList)
             {
                 Console.Write($"{i,3}");
             }
             Console.WriteLine();
-
+            
             Console.WriteLine("합병 정렬 결과 : ");
-            Sorting.MergeSort(mergeList, 0, mergeList.Count - 1);
+            MySort.MergedSort(mergeList, 0, mergeList.Count - 1);
             foreach (int i in mergeList)
             {
                 Console.Write($"{i,3}");
             }
             Console.WriteLine();
 
-
+            
             Console.WriteLine("퀵 정렬 결과 : ");
-            Sorting.QuickSort(quickList, 0, quickList.Count - 1);
+            MySort.QuickSort(quickList, 0, quickList.Count - 1);
             foreach (int i in quickList)
             {
                 Console.Write($"{i,3}");
@@ -80,7 +81,7 @@
                 Console.Write($"{i,3}");
             }
             Console.WriteLine();
-
+            
             //인트로 정렬
             //상황에 따라 더 좋은 정렬 알고리즘을 선택해서 사용함
             //퀵정렬로 시작한 다음 최악의 상황(O(n^2))에 근접한다면
@@ -93,6 +94,8 @@
                 Console.Write($"{i,3}");
             }
             Console.WriteLine();
+
+            
         }
     }
 }
