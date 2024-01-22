@@ -167,6 +167,7 @@ namespace _09.Sotrting
                 else
                 {
                     Swap(list, right, pivot);
+                    break;
                 }
             }
             QuickSort(list, start, right-1);
@@ -175,5 +176,22 @@ namespace _09.Sotrting
 
         // <힙정렬>
         // 힙을 이용하여 우선순위가 가장 높은 요소가 가장 마지막 요소와 교체된 후 제거되는 방법을 이용
+        public static void HeapSort(IList<int>list)
+        {
+            SortedSet<int> sortedSet = new SortedSet<int>();
+
+            foreach(int i in list)
+            {
+                sortedSet.Add(i);
+            }
+
+            int count = 0;
+            foreach(int i in sortedSet)
+            {
+                list[count] = i;
+                count++;
+            }
+        }
+
     }
 }

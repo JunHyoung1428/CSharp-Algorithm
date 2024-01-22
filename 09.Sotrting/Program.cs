@@ -75,7 +75,7 @@
 
 
             Console.WriteLine("힙 정렬 결과 : ");
-            Sorting.HeapSort(heapList);
+            MySort.HeapSort(heapList);
             foreach (int i in heapList)
             {
                 Console.Write($"{i,3}");
