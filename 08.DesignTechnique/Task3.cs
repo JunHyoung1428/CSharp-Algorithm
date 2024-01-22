@@ -19,7 +19,8 @@ namespace _08.DesignTechnique
 {
     internal class Task3
     {
-        static int white = 0, blue = 0;
+        static int white = 0;
+        static int blue = 0;
         static int[,] paper;
         static void Main()
         {
@@ -29,7 +30,8 @@ namespace _08.DesignTechnique
             for (int i = 0; i < size; i++)
             {
                 string[] input = Console.ReadLine().Split();
-                for(int j = 0; j < size; j++)
+                for(
+                    int j = 0; j < size; j++)
                 {
                     paper[i,j] = int.Parse(input[j]);
                 }
@@ -47,26 +49,35 @@ namespace _08.DesignTechnique
                 int check = paper[startX, startY];
                 if(check == 1)
                 {
-                    white++;
+                    blue++;
                 }
                 else
                 {
-                    blue++;
+                    white++;
                 }
                 return;
             }
-
-            Devide(startX               , startY            , sizeX/2   ,sizeY/2);
-            Devide(startX               , startY+sizeY/2    , sizeX/2   ,sizeY/2);
-            Devide(startX + startX / 2  , startY            , sizeX / 2 ,sizeY / 2);
-            Devide(startX + startX / 2  , startY+sizeY/2    , sizeX / 2 ,sizeY / 2);
+            Devide(startX               , startY            , sizeX/2   ,sizeY/2); //좌상단
+            Devide(startX               , startY+sizeY/2    , sizeX/2   ,sizeY/2); //우상단
+            Devide(startX + startX / 2  , startY            , sizeX / 2 ,sizeY / 2); //좌하단
+            Devide(startX + startX / 2  , startY+sizeY/2    , sizeX / 2 ,sizeY / 2); //우하단
         }
 
         public static bool IsAllColorMatched(int startX, int startY, int sizeX, int sizeY)
         {
+            int check = paper[startX, startY];
             //모두 돌아서 색이 같은지 아닌지만 확인
-
-            return false;
+            for (int x = startX; x < startX + sizeX; x++)
+            {
+                for(int y = startY; y < startY + sizeY; y++)
+                {
+                    if (paper[x, y] != check)
+                    {
+                        return false;
+                    }
+                }
+            }
+            return true;
         }
     }
 }
