@@ -21,7 +21,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "07.Hashtable", "07. Hashtab
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "08.DesignTechnique", "08.DesignTechnique\08.DesignTechnique.csproj", "{55F60D96-E8C5-4C0B-8290-8BEA9C8F73E8}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "09.Sotrting", "09.Sotrting\09.Sotrting.csproj", "{315A5365-29A4-47A6-A247-DA145AFA5B05}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "09.Sotrting", "09.Sotrting\09.Sotrting.csproj", "{315A5365-29A4-47A6-A247-DA145AFA5B05}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "10.Search", "10.Search\10.Search.csproj", "{EFBDF413-9751-4E4E-B32F-5FBB74317B81}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -69,6 +71,10 @@ Global
 		{315A5365-29A4-47A6-A247-DA145AFA5B05}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{315A5365-29A4-47A6-A247-DA145AFA5B05}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{315A5365-29A4-47A6-A247-DA145AFA5B05}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EFBDF413-9751-4E4E-B32F-5FBB74317B81}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFBDF413-9751-4E4E-B32F-5FBB74317B81}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFBDF413-9751-4E4E-B32F-5FBB74317B81}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFBDF413-9751-4E4E-B32F-5FBB74317B81}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
