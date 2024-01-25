@@ -19,7 +19,7 @@ namespace _11.ShortPath
                 {   1, INF, INF, INF,   4, INF, INF,   0, INF},
                 { INF,   5, INF,   2, INF, INF, INF, INF,   0}
             };
-            Dijkstra.ShortestPath(graph, 0, out bool[] visited, out int[] distance, out int[] parents);
+            MyDijkstra.ShortestPath(graph, 0, out bool[] visited, out int[] distance, out int[] parents);
             Console.WriteLine("<Dijkstra>");
             PrintDijkstra(distance, parents);
         }
